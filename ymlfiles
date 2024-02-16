@@ -1,0 +1,91 @@
+yaml
+Copy code
+# Example Fast framework configuration
+fast:
+  framework:
+    version: 2.0
+  environment:
+    name: development
+    url: http://example.com
+  browser:
+    type: chrome
+    headless: true
+config/features/login.yml
+yaml
+Copy code
+# Example login feature configuration
+login:
+  username: exampleUser
+  password: password123
+config/features/logout.yml
+yaml
+Copy code
+# Example logout feature configuration
+logout:
+  confirmation_message: Are you sure you want to log out?
+config/features/status_check.yml
+yaml
+Copy code
+# Example status check feature configuration
+status_check:
+  payment_id: ABC123
+config/features/send_payment.yml
+yaml
+Copy code
+# Example send payment feature configuration
+send_payment:
+  recipient: John Doe
+  amount: 100
+config/features/receive_payment.yml
+yaml
+Copy code
+# Example receive payment feature configuration
+receive_payment:
+  sender: Jane Smith
+  amount: 150
+config/features/authorization.yml
+yaml
+Copy code
+# Example authorization feature configuration
+authorization:
+  recipient: John Doe
+  amount: 200
+config/steps/main.yml
+yaml
+Copy code
+# Example main steps configuration
+main_steps:
+  common:
+    navigate_to_page: /home
+  authentication:
+    login: /login
+    logout: /logout
+config/steps/test.yml
+yaml
+Copy code
+# Example test-specific steps configuration
+test_steps:
+  send_payment:
+    initiate_payment: /send-payment
+  receive_payment:
+    receive_payment: /receive-payment
+  authorization:
+    authorize_payment: /authorize-payment
+config/log4j2.yml
+yaml
+Copy code
+# Example Log4j2 configuration
+configuration:
+  status: warn
+  appenders:
+    - type: console
+      name: ConsoleAppender
+      layout:
+        type: pattern
+        pattern: "%d [%t] %-5level %logger{36} - %msg%n"
+  loggers:
+    - name: com.example
+      level: debug
+      additivity: false
+      appenders:
+        - ConsoleAppender
